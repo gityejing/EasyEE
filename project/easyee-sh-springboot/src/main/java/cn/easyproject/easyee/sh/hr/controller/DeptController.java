@@ -74,9 +74,13 @@ public class DeptController extends BaseController {
 		}
 
 		/*
-		 * Ajax响应信息 statusCode: 响应状态码; msg: 响应消息; callback: 执行回调函数, locationUrl:
-		 * 跳转页面
+		 * Ajax响应信息
+		 * 	statusCode: 响应状态码;
+		 * 	msg: 响应消息;
+		 * 	callback: 执行回调函数,
+		 * 	locationUrl:跳转页面
 		 */
+
 		// EasyUI框架响应结果都是JSON
 		// JSON数据初始化，包含EasySSH Ajax响应信息
 		// super.setJsonMsgMap();

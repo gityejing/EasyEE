@@ -2,6 +2,7 @@ package cn.easyproject.easyee.sh.base.configuration;
 
 import javax.annotation.Resource;
 
+import cn.easyproject.easyee.sh.base.filter.UserAccessApiInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -31,6 +32,10 @@ public class InterceptorConfiguration extends WebMvcConfigurerAdapter {
 		LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
 		localeChangeInterceptor.setParamName("lang");
 		registry.addInterceptor(localeChangeInterceptor).addPathPatterns("/**");
+
+		// 访问拦截在后台打印访问的方法
+		UserAccessApiInterceptor userAccessApiInterceptor = new UserAccessApiInterceptor();
+		registry.addInterceptor(userAccessApiInterceptor).addPathPatterns("/**");
 		super.addInterceptors(registry);
 	}
 

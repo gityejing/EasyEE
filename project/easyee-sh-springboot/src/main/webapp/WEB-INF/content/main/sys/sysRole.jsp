@@ -93,8 +93,7 @@
 			uiEx.loadForm("#sysRoleEditForm", row, "");
 
 			//查询角色所有权限
-			$.post("SysRole/getAllPermissionsId", "roleId="
-					+ row.roleId, function(data) {
+			$.post("SysRole/getAllPermissionsId", "roleId="+ row.roleId, function(data) {
 				/*
 				 * 初始化权限复选框
 				 */
@@ -105,11 +104,8 @@
 					lines : true,
 					noChildCascadeCheck : true,
 					showTitle : "remark"
-
 				}, data.list);
-
 			}, "json");
-
 		}
 
 		sysRole.toDelete = function() {

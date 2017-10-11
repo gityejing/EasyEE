@@ -11,29 +11,27 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 
 /**
- * 
  * @author easyproject.cn
  * @version 1.0
- * 
  */
-@ControllerAdvice(basePackages = { "cn.easyproject.easyee.sh" })
+@ControllerAdvice(basePackages = {"cn.easyproject.easyee.sh"})
 public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
 
-	// VIEW result
-	private static Logger logger = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
-	
+    // VIEW result
+    private static Logger logger = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
 
-	@ExceptionHandler(Exception.class)
-	ModelAndView handleControllerException(HttpServletRequest request, Throwable ex) {
-		if(logger.isErrorEnabled()){
-			logger.error("Controller exception",ex);
-		}
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("error/controllerError");
-		return mav;
-	}
 
-	// JSON result
+    @ExceptionHandler(Exception.class)
+    ModelAndView handleControllerException(HttpServletRequest request, Throwable ex) {
+        if (logger.isErrorEnabled()) {
+            logger.error("Controller exception", ex);
+        }
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("error/controllerError");
+        return mav;
+    }
+
+    // JSON result
 
 //	@ExceptionHandler(ArithmeticException.class)
 //	@ResponseBody

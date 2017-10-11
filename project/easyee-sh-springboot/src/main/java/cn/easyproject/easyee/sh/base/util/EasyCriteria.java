@@ -60,9 +60,9 @@ import java.util.List;
  * 
  */
 public abstract class EasyCriteria {
-	protected List<Object> values = new ArrayList<Object>();
+	protected List<Object> values = new ArrayList<Object>();// 查询语句参数的值
 
-	public abstract String getCondition();
+	public abstract String getCondition();// 查询语句
 
 	public List<Object> getValues() {
 		return values;
